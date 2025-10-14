@@ -1,7 +1,6 @@
 import math
 from itertools import combinations
 import pyautogui
-import time
 
 def refactorBoard(board):
     size = int(math.sqrt(len(board)))
