@@ -14,6 +14,8 @@ if __name__ == "__main__":
 
     # Wait for start
     keyboard.wait("s")
+    # Or
+    # time.sleep(2)
 
     # Start timer
     startTime = time.time()
@@ -22,6 +24,14 @@ if __name__ == "__main__":
 
     # img = Image.open("data/test_screenshot_30.png")
     img = pyautogui.screenshot()
+    
+    # LINUX USERS
+    def screenshot(path="screenshot.png"):
+        import os
+        # Replace command with the respective one
+        os.system(f"spectacle -n -f -b -o {path}")
+        return Image.open(path)
+    # img = screenshot()
 
     # Loads an image
     imgNA, thresh = readBoard.loadImage(img)
