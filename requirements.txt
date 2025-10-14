@@ -1,0 +1,8 @@
+math
+numpy
+pyautogui
+keyboard
+opencv-python
+torch
+torchvision
+itertools
