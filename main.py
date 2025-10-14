@@ -17,6 +17,8 @@ if __name__ == "__main__":
 
     # Start timer
     startTime = time.time()
+    readBoardTime = startTime
+    solvedBoardTime = startTime
 
     # img = Image.open("data/test_screenshot_30.png")
     img = pyautogui.screenshot()
