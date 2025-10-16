@@ -1,9 +1,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h2 align="center">Chat App</h2>
+  <h2 align="center">Sudoku Bot</h2>
 
-  <p align="center">An open-source web chat application</p>
+  <p align="center">An AI run bot that can solve any Sudoku</p>
 </div>
 
 
