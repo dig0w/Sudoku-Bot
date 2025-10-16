@@ -56,7 +56,8 @@
 
 3. Press 'S' whenever you want him to start solving
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<p align="right">(<a href="#Sudoku-Bot">back to top</a>)</p>
 
 
 
