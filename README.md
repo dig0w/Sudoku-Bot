@@ -72,7 +72,7 @@ On average, the bot can solve a Sudoku puzzle in ~13 seconds.
 
 The CNN was trained from scratch on a custom dataset built from screenshots of multiple Sudoku games, allowing it to recognize digits across different fonts and styles.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#Sudoku-Bot">back to top</a>)</p>
 
 
 
@@ -87,7 +87,7 @@ The CNN was trained from scratch on a custom dataset built from screenshots of m
 
 See the [open issues](https://github.com/dig0w/sudoku-bot/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#Sudoku-Bot">back to top</a>)</p>
 
 
 
@@ -96,7 +96,7 @@ See the [open issues](https://github.com/dig0w/sudoku-bot/issues) for a full lis
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#Sudoku-Bot">back to top</a>)</p>
 
 
 
@@ -105,10 +105,8 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#Sudoku-Bot">back to top</a>)</p>
 
 
 
 **🔗 Project Link:** [github.com/dig0w/sudoku-bot](https://github.com/dig0w/sudoku-bot)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
