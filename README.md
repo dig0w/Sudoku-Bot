@@ -3,7 +3,11 @@
 <div align="center">
   <h2 align="center">Sudoku Bot</h2>
 
-  <p align="center">An AI run bot that can solve any Sudoku</p>
+  <p align="center">
+    Sudoku bot using AI for digit recognition and hybrid rule/brute-force solving.
+    <br />
+    Automatically reads and fills puzzles from screen captures.
+  </p>
 </div>
 
 
@@ -15,20 +19,16 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#requirements">Requirements</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -36,44 +36,25 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-### Prerequisites
+### Requirements
+- Python 3.8+
+- Windows, macOS, or Linux
+- A visible Sudoku board on screen (supports sudoku.com, websudoku, etc.)
 
-To install the server packages:
-* npm
-  ```sh
-  cd server
-  npm install
-  ```
-
-
-To install the client packages:
-* npm
-  ```sh
-  cd client
-  npm install
-  ```
 
 ### Installation
 
-1. Create a .env file inside server folder
-
-2. Create MongoDB Cluster
-
-3. Inside .env file
-  ```env
-  DB_CONNECT = MongoDB Link (e.g.: mongodb+srv://<username>:<password>@<name>.mongodb.net/)
+1. Install requirements:
+  ```sh
+  pip install -r requirements.txt
   ```
 
-4. For the sign in verification you need an email and an application key
-  ```env
-  EMAil = Email
-  PASS = Email Application Key
+2. Run the bot:
+  ```sh
+  python main.py
   ```
 
-5. Get a free Token Key at [https://jwt.io](https://jwt.io)
-  ```env
-  JWT_SECRET = Token Key
-  ```
+3. Press 'S' whenever you want him to start solving
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -82,15 +63,13 @@ To install the client packages:
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-### Built With
+This bot takes a screenshot of your screen and detects the largest square, assumed to be the Sudoku board.
+Once the board is located, it extracts all 81 cells (9x9) and uses a custom CNN to recognize the digits.
+Using basic Sudoku rules (and brute-force when necessary), it solves the puzzle, then automatically fills in the answers by simulating mouse clicks and key presses.
 
-This application uses:
+On average, the bot can solve a Sudoku puzzle in ~13 seconds.
 
-* [![MongoDB][MongoDB.com]][MongoDB-url]
-* [![ExpressJS][ExpressJS.com]][ExpressJS-url]
-* [![React][React.js]][React-url]
-* [![NodeJS][NodeJS.org]][NodeJS-url]
-* [![Socket][Socket.io]][Socket-url]
+The CNN was trained from scratch on a custom dataset built from screenshots of multiple Sudoku games, allowing it to recognize digits across different fonts and styles.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -99,14 +78,13 @@ This application uses:
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Edit profile
-- [ ] Edit chats
-- [ ] Edit messages
-    - [ ] Forward
-    - [ ] Reply
-    - [ ] React
+- [x] CNN digit recognition
+- [x] Rule-based + brute-force solver
+- [x] Auto-input
+- [ ] AI-based board detection
+- [ ] Enhanced preprocessing for low-contrast boards
 
-See the [open issues](https://github.com/dig0w/chat-app/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/dig0w/sudoku-bot/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,34 +108,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 
-Project Link: [https://github.com/dig0w/chat-app](https://github.com/dig0w/chat-app)
+**🔗 Project Link:** [github.com/dig0w/sudoku-bot](https://github.com/dig0w/sudoku-bot)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
-[MongoDB.com]: https://img.shields.io/badge/MongoDB-20232A?style=for-the-badge&logo=mongodb&logoColor=00FE69
-[MongoDB-url]: https://www.mongodb.com/
-[ExpressJS.com]: https://img.shields.io/badge/Express-20232A?style=for-the-badge&logo=express&logoColor=259DFF
-[ExpressJS-url]: https://expressjs.com/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[NodeJS.org]: https://img.shields.io/badge/NodeJS-20232A?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E
-[NodeJS-url]: https://nodejs.org/
-[Socket.io]: https://img.shields.io/badge/Socket-20232A?style=for-the-badge&logo=socketdotio&logoColor=FEFEFE
-[Socket-url]: https://socket.io/
