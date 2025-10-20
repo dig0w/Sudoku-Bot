@@ -8,6 +8,22 @@ def refactorBoard(board):
         return []
     return [board[i*size:(i+1)*size] for i in range(size)]
 
+# Fills the gaps (0) of Matrix1, by the numbers in Matrix2
+def mergeBoards(Matrix1, Matrix2):
+    Merged = []
+    
+    for row_m1, row_m2 in zip(Matrix1, Matrix2):
+        MergedRow = []
+
+        for c1, c2 in zip(row_m1, row_m2):
+            if c1 != 0:
+                MergedRow.append(c1)
+            else:
+                MergedRow.append(c2)
+        Merged.append(MergedRow)
+
+    return Merged
+
 def getcandidates(board):
         size = len(board)
         boxsize = int(size ** 0.5)
@@ -407,8 +423,11 @@ def solveBoard(board):
 
                 if all(all(cell != 0 for cell in row) for row in resultBoard):
                     resultBoard[r][c] = guess
+                    solvedEmpties[r][c] = guess
 
-                    return resultBoard, resultEmpties
+                    solvedEmpties = mergeBoards(solvedEmpties, resultEmpties)
+
+                    return resultBoard, solvedEmpties
         
         # if all guesses fail → dead end
         print("Dead end 😒")

@@ -8,7 +8,7 @@ def getNextNumber(path, reg):
 
     files = os.listdir(path)
 
-    pattern = re.compile(fr'{reg}_(\d+)\.png')
+    pattern = re.compile(fr'{reg}_(?:[^_]*_)*?(\d+)\.png$')
 
     # Extract the numbers from the existing files
     numbers = [int(pattern.match(f).group(1)) for f in files if pattern.match(f)]

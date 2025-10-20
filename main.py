@@ -44,8 +44,10 @@ if __name__ == "__main__":
         pts = boardContour.reshape(4, 2)
         boardCorner = (int(pts[0,0]), int(pts[0,1]))
 
-        width  = np.linalg.norm(pts[3,0] - pts[0,0])
-        height = np.linalg.norm(pts[2,1] - pts[0,1])
+        width  = int(np.linalg.norm(pts[3,0] - pts[0,0]))
+        height = int(np.linalg.norm(pts[2,1] - pts[0,1]))
+
+        Image.fromarray(imgNA).save(f"./debug/board/board_x{boardCorner[0]}_y{boardCorner[1]}_w{width}_h{height}_{readBoard.dsM.getNextNumber('./debug/board', 'board'):03d}.png")
 
         cellSize = int(((width / 9) + (height / 9)) / 2)
 
@@ -77,6 +79,8 @@ if __name__ == "__main__":
         print(f"\nSolved Board: {solvedBoard}")
 
         solvedBoardTime = time.time()
+
+        print(f"\nSolved Empties: {solvedEmpties}")
 
         # Fills the board
         print(f"\nboardCorner: {boardCorner}")

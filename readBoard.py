@@ -54,8 +54,6 @@ def warpBoard(img, boardContour):
     M = cv2.getPerspectiveTransform(rect, dst)
     
     warp = cv2.warpPerspective(img, M, (450,450))
-
-    # Image.fromarray(warp).save(f"./debug/board/board_{dsM.getNextNumber('./debug/board', 'board'):03d}.png")
     
     return warp
 
@@ -141,7 +139,7 @@ def readBoard(model, cellImgs):
         outputs = model(batch)
         preds = outputs.argmax(dim=1).cpu().numpy()
 
-    # for img, val in zip(cellImgs, preds):
-    #     Image.fromarray(img).save(f"./debug/{val}/{val}_{dsM.getNextNumber(f'./debug/{val}', val):03d}.png")
+    for img, val in zip(cellImgs, preds):
+         Image.fromarray(img).save(f"./debug/{val}/{val}_{dsM.getNextNumber(f'./debug/{val}', val):03d}.png")
 
     return preds.tolist()
