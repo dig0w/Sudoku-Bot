@@ -83,7 +83,7 @@ The CNN was trained from scratch on a custom dataset built from screenshots of m
 - [x] Rule-based + brute-force solver
 - [x] Auto-input
 - [ ] AI-based board detection
-- [ ] Enhanced preprocessing for low-contrast boards
+- [x] Enhanced preprocessing for low-contrast boards
 
 See the [open issues](https://github.com/dig0w/sudoku-bot/issues) for a full list of proposed features (and known issues).
 
