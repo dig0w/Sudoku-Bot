@@ -22,7 +22,7 @@ if __name__ == "__main__":
     readBoardTime = startTime
     solvedBoardTime = startTime
 
-    # img = Image.open("data/test_screenshot_30.png")
+    # img = Image.open("img.png")
     img = pyautogui.screenshot()
     
     # LINUX USERS
@@ -33,7 +33,7 @@ if __name__ == "__main__":
         return Image.open(path)
     # img = screenshot()
 
-    # Loads an image
+    # Loads the image
     imgNA, thresh = readBoard.loadImage(img)
 
     # Finds the board
@@ -46,8 +46,6 @@ if __name__ == "__main__":
 
         width  = int(np.linalg.norm(pts[3,0] - pts[0,0]))
         height = int(np.linalg.norm(pts[2,1] - pts[0,1]))
-
-        Image.fromarray(imgNA).save(f"./debug/board/board_x{boardCorner[0]}_y{boardCorner[1]}_w{width}_h{height}_{readBoard.dsM.getNextNumber('./debug/board', 'board'):03d}.png")
 
         cellSize = int(((width / 9) + (height / 9)) / 2)
 
@@ -79,12 +77,6 @@ if __name__ == "__main__":
         print(f"\nSolved Board: {solvedBoard}")
 
         solvedBoardTime = time.time()
-
-        print(f"\nSolved Empties: {solvedEmpties}")
-
-        # Fills the board
-        print(f"\nboardCorner: {boardCorner}")
-        print(f"\ncellSize: {cellSize}")
 
         isSolved = all(all(cell != 0 for cell in row) for row in solvedBoard)
         if isSolved:

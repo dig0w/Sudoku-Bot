@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import ai.datasetManager as dsM
 
 # Returns the default image and a binary tresholded version
 def loadImage(img):
@@ -78,6 +77,12 @@ def preprocessCell(cell):
     # Otsu thresholding
     _, threshed = cv2.threshold(arr, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
+    whitePixels = np.sum(threshed == 255)
+    blackPixels = np.sum(threshed == 0)
+
+    if blackPixels > whitePixels:
+        threshed = cv2.bitwise_not(threshed)
+
     threshed = cv2.resize(threshed, (28,28), interpolation=cv2.INTER_AREA)
 
     return threshed
@@ -99,12 +104,12 @@ def preprocessCells(cells):
 
 
 import torch
-from ai.cnn import DigitCNN
-from PIL import Image
+from CNN.digitsCNN import DigitsCNN
 import torchvision.transforms as transforms
+from PIL import Image
 
-def loadModel(path="ai/digit_cnn_sudoku.pt"):
-    model = DigitCNN()
+def loadModel(path="CNN/digitsCNN.pt"):
+    model = DigitsCNN()
 
     model.load_state_dict(torch.load(path, map_location="cpu"))
     model.eval()
@@ -138,8 +143,5 @@ def readBoard(model, cellImgs):
     with torch.no_grad():
         outputs = model(batch)
         preds = outputs.argmax(dim=1).cpu().numpy()
-
-    for img, val in zip(cellImgs, preds):
-         Image.fromarray(img).save(f"./debug/{val}/{val}_{dsM.getNextNumber(f'./debug/{val}', val):03d}.png")
 
     return preds.tolist()
