@@ -9,7 +9,7 @@
     Automatically reads and fills puzzles from screen captures.
   </p>
 
-  ## ![About View Desktop][./preview.gif]
+  ## [![About View Desktop][product-screenshot9]](https://silasrodrigues.vercel.app)
 </div>
 
 <!-- Index -->
@@ -99,3 +99,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 **🔗 Project Link:** [github.com/dig0w/sudoku-bot](https://github.com/dig0w/sudoku-bot)
+
+[product-screenshot9]: ./preview.gif
