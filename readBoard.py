@@ -24,7 +24,8 @@ def findBoard(thresh):
         peri = cv2.arcLength(c, True)
         approx = cv2.approxPolyDP(c, 0.02 * peri, True)
 
-        if len(approx) == 4:  # Found a quadrilateral
+        # Found a quadrilateral
+        if len(approx) == 4:
             return approx
     
     return None
