@@ -8,9 +8,9 @@
     <br />
     Automatically reads and fills puzzles from screen captures.
   </p>
+
+  ## ![About View Desktop][./preview.gif]
 </div>
-
-
 
 <!-- Index -->
 <details>
@@ -31,7 +31,6 @@
     <li><a href="#license">License</a></li>
   </ol>
 </details>
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -59,8 +58,6 @@
 
 <p align="right">(<a href="#Sudoku-Bot">back to top</a>)</p>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -74,8 +71,6 @@ The CNN was trained from scratch on a custom dataset built from screenshots of m
 
 <p align="right">(<a href="#Sudoku-Bot">back to top</a>)</p>
 
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -88,8 +83,6 @@ See the [open issues](https://github.com/dig0w/sudoku-bot/issues) for a full lis
 
 <p align="right">(<a href="#Sudoku-Bot">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -97,15 +90,12 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 <p align="right">(<a href="#Sudoku-Bot">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#Sudoku-Bot">back to top</a>)</p>
-
 
 
 **🔗 Project Link:** [github.com/dig0w/sudoku-bot](https://github.com/dig0w/sudoku-bot)
